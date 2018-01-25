@@ -1,6 +1,6 @@
 //Maya ASCII 2017ff05 scene
 //Name: raystaff.ma
-//Last modified: Thu, Jan 25, 2018 04:31:12 PM
+//Last modified: Thu, Jan 25, 2018 04:34:09 PM
 //Codeset: 1252
 requires maya "2017ff05";
 requires "stereoCamera" "10.0";
@@ -14,33 +14,33 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "06CAD527-45C0-7177-5B10-3CBE9419021A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -6.5309659809719882 17.429463754045585 20.912615746117812 ;
-	setAttr ".r" -type "double3" -33.938352729608582 -17.799999999999123 0 ;
+	setAttr ".t" -type "double3" 0.18747970975937228 8.4094438024395775 2.1003487448262961 ;
+	setAttr ".r" -type "double3" -25.538352729610324 18.600000000000694 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "60D82AA2-44F4-B977-6E8D-DA97BF7B64EF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 26.273866798955815;
+	setAttr ".coi" 4.7729561316461577;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.40524538093482421 -0.55458842393393848 -2.7388027609709376e-008 ;
+	setAttr ".tp" -type "double3" 0.096476465463638306 -6.566889762878418 2.2351741790771484e-008 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C508F9D8-4B44-D105-4CE2-DF9EF6837911";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.16337027551248717 1000.1001729861021 -0.042379853551548226 ;
+	setAttr ".t" -type "double3" 0.099685819986003121 1000.100207414755 -0.04438855663921748 ;
 	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
 createNode camera -s -n "topShape" -p "top";
 	rename -uid "321A3E91-4569-D553-5122-CFB19ED672EC";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.6547614100358;
-	setAttr ".ow" 13.876154964500483;
+	setAttr ".coi" 1006.6670971776332;
+	setAttr ".ow" 2.000369871960213;
 	setAttr ".imn" -type "string" "top";
 	setAttr ".den" -type "string" "top_depth";
 	setAttr ".man" -type "string" "top_mask";
-	setAttr ".tp" -type "double3" -0.40524538093482421 -0.55458842393393848 -2.7388027609709376e-008 ;
+	setAttr ".tp" -type "double3" 0.096476465463638306 -6.566889762878418 2.2351741790771484e-008 ;
 	setAttr ".hc" -type "string" "viewSet -t %camera";
 	setAttr ".o" yes;
 createNode transform -s -n "front";
@@ -96,7 +96,7 @@ createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.49999998509883881 0.15624996274709702 ;
+	setAttr ".pv" -type "double2" 0.49999998509883881 0.17486510425806046 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -201,11 +201,18 @@ createNode mesh -n "pPipe2Shape" -p "pPipe2";
 	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.50000008381903172 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 20 ".pt[80:99]" -type "float3"  0 0 -9.86206e-018 0 0 0.029721254 
+		0 0 4.357836e-018 0 0 0.029721254 0 0 -0.029721277 0 0 -0.029721277 0 0 -9.86206e-018 
+		-0.017995417 0 0.029721254 0 0 4.3578348e-018 -0.017995417 0 0.029721254 -0.017995417 
+		0 -0.029721277 -0.017995417 0 -0.029721277 0 0 -0.051426835 0 0 -0.051426835 0 0 
+		-0.051426835 0 0 -0.051426835 0 0 0.051426835 0 0 0.051426835 0 0 0.051426835 0 0 
+		0.051426835;
 createNode transform -n "pCube2";
 	rename -uid "0E9EACDA-4B7E-5A61-8969-93AE14606892";
 	setAttr ".t" -type "double3" -0.035643669671102773 6.5519494380555008 0 ;
@@ -466,7 +473,7 @@ createNode polySplitRing -n "polySplitRing10";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "D47DCDC8-4D7C-1318-AD40-9496AA1344DA";
 	setAttr ".b" -type "string" (
-		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
+		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n"
 		+ "            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 552\n            -height 333\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
@@ -518,7 +525,6 @@ createNode polyPipe -n "polyPipe1";
 	setAttr ".sc" 0;
 createNode displayLayer -n "layer1";
 	rename -uid "56399910-4929-FE54-3822-AFBA9BF220CC";
-	setAttr ".v" no;
 	setAttr ".do" 1;
 createNode polyExtrudeFace -n "polyExtrudeFace1";
 	rename -uid "8860B559-4695-CCBC-F462-EAA901BF64B6";
